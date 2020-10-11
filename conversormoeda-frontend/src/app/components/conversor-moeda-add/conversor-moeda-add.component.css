@@ -1,0 +1,35 @@
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 800px;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.netrito {
+    font-weight: bold;
+}
+
+.espacamento {
+    padding-left: 5px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+select.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+    border: 1px solid green;
+}
+
+select.ng-valid.ng-touched {
+    border: 1px solid green;
+}

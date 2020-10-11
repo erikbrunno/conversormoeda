@@ -1,0 +1,69 @@
+<mat-card>
+    <mat-card-title>Conversor de moeda</mat-card-title>
+    <form [formGroup]="formulario" (ngSubmit)="salvar()" novalidate>
+        <div class="row">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="Selecione a data"
+                formControlName="dataConsulta">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Digite o valor" 
+                formControlName="valorOrigem" 
+                name="valorOrigem">
+        </mat-form-field>
+
+        <h4>Converter de</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione uma opção</mat-label>
+            <mat-select  formControlName="moedaOrigemId" >
+                <mat-option *ngFor="let moeda of moedas" [value]="moeda.id">
+                    {{moeda.nomeFormatado + ' (' + moeda.simbolo + ')' }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h4>Para</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione uma opção</mat-label>
+            <mat-select formControlName="moedaDestinoId">
+                <mat-option *ngFor="let moeda of moedas" [value]="moeda.id">
+                    {{moeda.nomeFormatado + ' (' + moeda.simbolo + ')' }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+        
+        <div>
+            <button mat-raised-button type="submit" color="primary">
+                Salvar
+            </button>
+    
+            <button mat-raised-button (click)="cancelar()">
+                Voltar
+            </button>
+        </div>
+    </form>
+</mat-card>
+<br />
+<mat-card *ngIf="cotacaoModel.id">
+    <mat-card-title>Resultado da conversão</mat-card-title>
+   
+    <div layout="row">
+        <label class="netrito">Converter de: </label>
+        <span>{{cotacaoModel.moedaOrigem.nomeFormatado + ' (' + cotacaoModel.moedaOrigem.simbolo + ')' }}</span>
+        <label class="netrito espacamento">Valor: </label>
+        <span>{{cotacaoModel.valorOrigem}}</span>
+    </div>
+    <div layout="row">
+        <label class="netrito">Para: </label>
+        <span>{{cotacaoModel.moedaDestino.nomeFormatado + ' (' + cotacaoModel.moedaDestino.simbolo + ')' }}</span>
+        <label class="netrito espacamento">Valor: </label>
+        <span>{{cotacaoModel.valorDestino}}</span>
+    </div>
+
+</mat-card>
+
+

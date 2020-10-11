@@ -1,0 +1,1 @@
+--Esse arquivo é usado pelo flyway depois de executar as migracoes, está aqui, mais sem uso

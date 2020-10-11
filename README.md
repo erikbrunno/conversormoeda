@@ -1,6 +1,6 @@
 # Sistema de conversão de moeda
 
-### Esse sistema tem como objetivo converter um valor de uma moeda de origem para outro valor em uma moeda de destino, por exemplo, convter 500 EURO para DOLAR.
+### Esse sistema tem como objetivo converter um valor de uma moeda de origem para outro valor em uma moeda de destino, por exemplo, converter 500 EURO para DOLAR. A aplicação faz uma consulta na api de dados abertos do banco central para realizar a a conversão.
 
 ## Requisitos mínimos
 

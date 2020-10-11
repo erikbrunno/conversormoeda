@@ -20,7 +20,7 @@
 ### Para baixar e executar o rabbitMQ usando o docker, execute a instrução abaixo
 
 ---------------------------------------------------------------------------------------
-| docker run -d -p 5672:5672 -p 15672:15672 --name=rabbitmq rabbitmq:3.8.3-management |
+### docker run -d -p 5672:5672 -p 15672:15672 --name=rabbitmq rabbitmq:3.8.3-management 
 ---------------------------------------------------------------------------------------
 
-Em seguida acessa url http://localhost:15672/ para acessa a interface do rabbitMQ e digite "guest" para usuario e senha.
+### Em seguida acessa url http://localhost:15672/ para acessa a interface do rabbitMQ e digite "guest" para usuario e senha.

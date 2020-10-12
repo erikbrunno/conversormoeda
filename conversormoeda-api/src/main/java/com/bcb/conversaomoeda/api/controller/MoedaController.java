@@ -31,6 +31,6 @@ public class MoedaController {
 		List<Moeda> todasMoedas = cadastroMoeda.consultar();
 		List<MoedaModel> moedasModel = moedaModelAssembler.toCollectionModel(todasMoedas);
 
-		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(10, TimeUnit.SECONDS)).body(moedasModel);
+		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(30, TimeUnit.MINUTES)).body(moedasModel);
 	}
 }

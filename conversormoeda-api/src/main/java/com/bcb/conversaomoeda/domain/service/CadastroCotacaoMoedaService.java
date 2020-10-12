@@ -3,6 +3,8 @@ package com.bcb.conversaomoeda.domain.service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,8 @@ import com.bcb.conversaomoeda.domain.repository.CotacaoMoedaRepository;
 @Service
 public class CadastroCotacaoMoedaService {
 
+	private static final Logger log = LoggerFactory.getLogger(CadastroCotacaoMoedaService.class);
+	
 	@Autowired
 	private CadastroMoedaService cadastroMoeda;
 
@@ -27,6 +31,8 @@ public class CadastroCotacaoMoedaService {
 	@Transactional
 	public CotacaoMoeda salvar(CotacaoMoeda cotacaoMoeda) {
 
+		log.info("Salvando uma cotacao moeda");
+		
 		Moeda moedaOrigem = cadastroMoeda.buscar(cotacaoMoeda.getMoedaOrigem().getId());
 		Moeda moedaDestino = cadastroMoeda.buscar(cotacaoMoeda.getMoedaDestino().getId());
 

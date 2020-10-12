@@ -4,6 +4,8 @@ import static com.bcb.conversaomoeda.api.util.Constantes.PATH;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,8 @@ import com.bcb.conversaomoeda.domain.repository.MoedaRepository;
 @Service
 public class CadastroMoedaBcService {
 
+	private static final Logger log = LoggerFactory.getLogger(CadastroMoedaBcService.class);
+	
 	private static final String URL_BCB_CONSULTAR_MOEDAS = PATH
 			+ "Moedas?$top=100&$skip=0&$format=json&$select=simbolo,nomeFormatado";
 
@@ -31,6 +35,9 @@ public class CadastroMoedaBcService {
 	
 	@Transactional
 	public void importacaoMoeda() {
+		
+		log.info("Importando moeda do bcb");
+		
 		MoedaBcbList resposta = restTemplate.getForObject(URL_BCB_CONSULTAR_MOEDAS, MoedaBcbList.class);
 		
 		resposta.getMoedas().stream().forEach(moedaBc -> {

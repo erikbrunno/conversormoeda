@@ -24,3 +24,14 @@
 ---------------------------------------------------------------------------------------
 
 ### Em seguida acessa url http://localhost:15672/ para acessa a interface do rabbitMQ e digite "guest" para usuario e senha.
+
+## Módulo **conversormoeda-api**
+### Esse módulo é a responsável pela parte backend, apos baixar o projeto precisamos baixar as dependências pelo maven, execute o comando **mvn clean install**
+
+## Módulo **conversormoeda-frontend** 
+### Depois de baixar o projeto precisamos baixar as dependências do front, na raiz no módulo execute o comando **npm install**
+
+# Iniciar o backend e frontend
+
+### ConversorMoedaApiApplication.java inicia aplicação na porta 8080
+### Para rodar o front execute na raiz do módulo npm start, esse comando roda executa um comando ng server --port 8080

@@ -35,3 +35,5 @@
 
 ### ConversorMoedaApiApplication.java inicia aplicação na porta 8080
 ### Para rodar o front execute na raiz do módulo npm start, esse comando roda executa um comando ng server --port 4200
+### As configurações de banco estão no arquivo application.properties e flyway.properties
+
